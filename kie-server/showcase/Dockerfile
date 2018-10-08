@@ -34,8 +34,8 @@ ADD etc/settings.xml $JBOSS_HOME/../.m2/settings.xml
 USER root
 
 # Add mysql client libraries
-yum install mysql
-yum install postgresql-client
+RUN yum install -y mysql
+RUN yum install -y postgresql
 
 RUN chown jboss:jboss $JBOSS_HOME/standalone/configuration/standalone-full-kie-server.xml && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/kie-server-users.properties && \
