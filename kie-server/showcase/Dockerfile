@@ -32,6 +32,11 @@ ADD etc/settings.xml $JBOSS_HOME/../.m2/settings.xml
 
 # Added files are chowned to root user, change it to the jboss one.
 USER root
+
+# Add mysql client libraries
+yum install mysql
+yum install postgresql-client
+
 RUN chown jboss:jboss $JBOSS_HOME/standalone/configuration/standalone-full-kie-server.xml && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/kie-server-users.properties && \
 chown jboss:jboss $JBOSS_HOME/standalone/configuration/kie-server-roles.properties && \
